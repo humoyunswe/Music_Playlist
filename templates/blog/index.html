@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    <title>Spotify</title>
+{% endblock title %}
+
+{% block content %}
+    <table class="header">
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Duration</th>
+        </tr>
+        <tr>
+            {% for i in data %}
+                <tr>
+                    <td> {{ forloop.counter }} </td>
+                    <td>{{i.track_name}}</td>
+                    <td><a href="{{ i.track_url }}">{{ i.track_name }}</a></td>
+                    <td>{{i.track_duration}}</td>
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+
+{% endblock content %}
